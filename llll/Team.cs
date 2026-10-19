@@ -43,6 +43,9 @@ namespace llll
         {
             return _goalsFor - _goalsAgaints;
         }
-
+        public string Describe(Team team)
+        {
+            return $"{team.Name} {team.Points} pont, {team.GoalsFor} - {team.GoalsAgaints}";
+        }
     } }
 

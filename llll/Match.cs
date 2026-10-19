@@ -63,5 +63,16 @@ namespace llll
                 return true;
             }
         }
+        public string Describe()
+        {
+            if (IsPlayed)
+            {
+                return $"{Home.Name} {Away.Name} {HomeGoals} - {AwayGoals}";
+            }
+            else
+            {
+                return $"{Home.Name} - {Away.Name} (még nem játszottak)";
+            }
+        }
     }
 }
