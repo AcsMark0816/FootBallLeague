@@ -47,5 +47,21 @@ namespace llll
             AwayGoals = 0;
             IsPlayed = false;
         }
+        public bool Play(int homeGoals, int awayGoals)
+        {
+            if(IsPlayed== false || homeGoals < 0 || awayGoals < 0)
+            {
+                return false;
+            }
+            else
+            {
+                HomeGoals = homeGoals;
+                AwayGoals = awayGoals;
+                IsPlayed = true;
+                Home.AddResult(homeGoals, awayGoals);
+                Away.AddResult(awayGoals, homeGoals);
+                return true;
+            }
+        }
     }
 }
