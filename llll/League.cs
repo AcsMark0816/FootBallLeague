@@ -39,5 +39,36 @@ namespace llll
                 return true;
             }
         }
+        public int UnplayedCount()
+        {
+            int count = 0;
+            foreach (Match match in _matches)
+            {
+                if (match.IsPlayed == false)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+        public Team Leader()
+        {
+            Team leader = _teams[0];
+            foreach (Team team in _teams)
+            {
+                if (team.Points > leader.Points)
+                {
+                    leader = team;
+                }
+                else if (team.Points == leader.Points)
+                {
+                    if (team.GoalDifference() > leader.GoalDifference())
+                    {
+                        leader = team;
+                    }
+                }
+            }
+            return leader;
+        }
     }
 }
